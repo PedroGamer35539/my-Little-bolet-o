@@ -1,10 +1,10 @@
 /* Variáveis com as cores escolhidas */
 :root {
   --cor-principal: #a83232;
-  --cor-secundaria: #9132a8;
-  --cor-fundo: #f8f4f9;
-  --cor-card: #ffffff;
-  --cor-texto: #333333;
+  --cor-secundaria: #2e308f;
+  --cor-fundo: #000000;
+  --cor-card: #000000;
+  --cor-texto: #a01f1f;
 }
 
 /* Reset básico para remover margens padrão */
@@ -62,14 +62,15 @@ header h1 {
   background-color: var(--cor-card);
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
   text-align: center;
+  border: 1px solid #222;
   border-top: 4px solid var(--cor-secundaria);
 }
 
 .card h3 {
   font-size: 0.9rem;
-  color: #666;
+  color: #aaa;
   margin-bottom: 10px;
 }
 
@@ -91,7 +92,8 @@ header h1 {
 .tabela-container {
   background-color: var(--cor-card);
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  border: 1px solid #222;
   overflow-x: auto; /* Permite rolar lateralmente no celular */
 }
 
@@ -104,7 +106,7 @@ table {
 
 th, td {
   padding: 14px 12px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #222;
 }
 
 th {
@@ -120,21 +122,144 @@ th:first-child, td:first-child {
 }
 
 tr:nth-child(even) {
-  background-color: #faf7fc;
+  background-color: #111111;
 }
 
 /* Estilos visuais para as situações */
 .situacao-bom {
-  color: #2e7d32;
+  color: #4caf50;
   font-weight: bold;
 }
 
 .situacao-atencao {
-  color: #c62828;
+  color: #f44336;
   font-weight: bold;
 }
 
 .situacao-indisponivel {
   color: #757575;
   font-style: italic;
+}
+
+/* Estilos para Acesso por PIN e Edição */
+.card-login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  border-top: 4px solid var(--cor-principal);
+}
+
+.card-login h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.info-aluno {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.campo-grupo label {
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+input[type="password"],
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #111;
+  color: #fff;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--cor-secundaria);
+}
+
+button {
+  background-color: var(--cor-principal);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.btn-secundario {
+  background-color: #444;
+}
+
+.painel-acoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mensagem {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-edicao {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.card-edicao h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.item-edicao {
+  background-color: #111;
+  border: 1px solid #333;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.item-edicao h4 {
+  color: var(--cor-principal);
+  margin-bottom: 10px;
+}
+
+.grid-campos-edicao {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.botoes-edicao {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.campo-invalido {
+  border-color: #f44336 !important;
+  background-color: #2b0000 !important;
 }

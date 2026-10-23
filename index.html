@@ -11,10 +11,34 @@
   <!-- Cabeçalho principal com título e subtítulo -->
   <header>
     <h1>Boletim Digital</h1>
-    <p class="subtitulo">8º Ano | Estudante Exemplo</p>
+    <p class="subtitulo">8º Ano | Turma 8C | Nº 23</p>
   </header>
 
-  <main class="container">
+  <!-- Área de Acesso por PIN (Visível antes do login) -->
+  <section id="area-login" class="container">
+    <div class="card card-login">
+      <h2>Acesso ao Boletim</h2>
+      <p class="info-aluno"><strong>Série:</strong> 8º Ano | <strong>Turma:</strong> 8C | <strong>Nº:</strong> 23</p>
+      <form id="form-login">
+        <div class="campo-grupo">
+          <label for="pin-input">Digite seu PIN:</label>
+          <input type="password" id="pin-input" placeholder="PIN" required autocomplete="off">
+        </div>
+        <button type="submit" id="btn-entrar">Entrar</button>
+      </form>
+      <p id="mensagem-login" class="mensagem"></p>
+    </div>
+  </section>
+
+  <!-- Conteúdo Principal do Boletim (Escondido até o login ser realizado) -->
+  <main id="conteudo-boletim" class="container" style="display: none;">
+    
+    <!-- Painel de Ações do Estudante -->
+    <div class="painel-acoes">
+      <button id="btn-alterar-dados">Alterar dados</button>
+      <p id="mensagem-status" class="mensagem"></p>
+    </div>
+
     <!-- Área de cards com o resumo de desempenho -->
     <section class="cards-grid">
       <div class="card">
@@ -63,6 +87,18 @@
         </tbody>
       </table>
     </section>
+
+    <!-- Área de Edição de Notas e Faltas (Inicialmente oculta) -->
+    <section id="area-edicao" class="card card-edicao" style="display: none;">
+      <h2>Alterar Notas e Faltas</h2>
+      <div id="container-edicao-disciplinas"></div>
+      <div class="botoes-edicao">
+        <button id="btn-salvar-alteracoes">Salvar alterações</button>
+        <button id="btn-cancelar-edicao" class="btn-secundario">Cancelar</button>
+      </div>
+      <p id="mensagem-edicao" class="mensagem"></p>
+    </section>
+
   </main>
 
   <script src="script.js"></script>
